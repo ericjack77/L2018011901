@@ -70,7 +70,19 @@ public class FragmentA extends Fragment {
         return inflater.inflate(R.layout.fragment_a, container, false);
     }
 
-    
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        View btn = getActivity().findViewById(R.id.button);  //        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextView tv=(TextView)getActivity().findViewById(R.id.textview);
+                tv.setText("Hello!");
+            }
+        });
+
+
+    }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
